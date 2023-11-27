@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1007577311656",
+    "project_id": "smart-mart-dd5ff",
+    "storage_bucket": "smart-mart-dd5ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007577311656:android:52a9612fd164038a74d59d",
+        "android_client_info": {
+          "package_name": "com.namitjain.smart_mart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8ft98FWCv6sWAqUOY_OnMN_0d2458zMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
