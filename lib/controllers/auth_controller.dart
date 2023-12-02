@@ -12,7 +12,7 @@ class AuthController {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // // function to Select image from gallery or camera
+  // function to Select image from gallery or camera
   _uploadProfileImageToStorage(Uint8List? image) async {
     Reference ref =
         _storage.ref().child('profilePics').child(_auth.currentUser!.uid);
