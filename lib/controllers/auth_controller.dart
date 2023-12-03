@@ -15,7 +15,7 @@ class AuthController {
   // function to Select image from gallery or camera
   _uploadProfileImageToStorage(Uint8List? image) async {
     Reference ref =
-        _storage.ref().child('profilePics').child(_auth.currentUser!.uid);
+        _storage.ref().child('ProfilePics').child(_auth.currentUser!.uid);
 
     UploadTask uploadTask = ref.putData(image!);
 
@@ -50,7 +50,7 @@ class AuthController {
 
       String downloadUrl = await _uploadProfileImageToStorage(image);
 
-      await _firestore.collection('buyers').doc(userCredential.user!.uid).set({
+      await _firestore.collection('Buyers').doc(userCredential.user!.uid).set({
         'fullname': fullName,
         'profileImage': downloadUrl,
         'email': email,
@@ -64,17 +64,18 @@ class AuthController {
     return res;
   }
 
-  // ///function to Login the created user
-  // Future<String> loginUser(String email, String paasword) async {
-  //   String res = 'Some error Occured ';
+  ///function to Login the created user
+  Future<String> loginUser(String email, String paasword) async {
+    String res = 'Some error Occured ';
 
-  //   try {
-  //     await _auth.signInWithEmailAndPassword(email: email, password: paasword);
+    try {
+      await _auth.signInWithEmailAndPassword(email: email, password: paasword);
 
-  //     res = 'success';
-  //   } catch (e) {
-  //     res = e.toString();
-  //   }
+      res = 'success';
+    } catch (e) {
+      res = e.toString();
+    }
 
-  //   return res;
+    return res;
+  }
 }
